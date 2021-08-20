@@ -1,8 +1,7 @@
 @extends('plantilla')
 @section('titulo')
-    <h2>Mercadito</h2>
     @section('content')
-    <a class="btn btn-primary"  href="{{route('provedor.nuevo')}}">Nuevo</a>
+    <h3>Proveedores <a class="btn btn-primary"  href="{{route('provedor.nuevo')}}">Nuevo</a></h3>
     <table class="table table-striped table-dark">
         <thead>
         <tr>

@@ -11,7 +11,12 @@ use PhpParser\Node\Expr\FuncCall;
 
 class FacturaController extends Controller
 {
-    //
+    
+    public function indice(){
+        $facturas = Factura::paginate(5);
+        return view('indiceFactura')->with('facturas', $facturas->load('cliente', 'productos'));
+    }
+
     public function nuevo(){
         $clientes = Cliente::all();
         $productos = Producto::all();
@@ -19,11 +24,6 @@ class FacturaController extends Controller
             'productos' => $productos,
             'clientes' => $clientes
         ]);
-    }
-
-    public function indice(){
-        $facturas = Factura::paginate(5);
-        return view('indiceFactura')->with('facturas', $facturas);
     }
 
     public function guardar(Request $request){
@@ -44,5 +44,9 @@ class FacturaController extends Controller
         }
         return redirect()->route('factura.indice');
 
+    }
+
+    public function editar($id){
+        return view('editarFactura');
     }
 }

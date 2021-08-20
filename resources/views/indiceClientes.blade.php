@@ -2,8 +2,7 @@
 @section('titulo')
     <h2>Mercadito</h2>
     @section('content')
-    <h3>clientes</h3>
-    <a class="btn btn-primary"  href="{{route('cliente.nuevo')}}">Nuevo</a>
+    <h3>Clientes <a class="btn btn-primary" href="{{ route('cliente.nuevo') }}">Nuevo</a></h3>
     <table class="table table-striped table-dark">
         <thead>
         <tr>

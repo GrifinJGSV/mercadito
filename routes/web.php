@@ -68,11 +68,11 @@ Route::delete('/cliente/{id}/borrar','App\Http\Controllers\ClientesController@de
     ->name('cliente.borrar')->where('id','[0-9]+');
 
 // Factura
-//indice
 Route::get('/factrura/indice', 'App\Http\Controllers\FacturaController@indice')->name('factura.indice');
-/*ruta para la creacion de provedores */
 Route::get('/factura/crear', 'App\Http\Controllers\FacturaController@nuevo')->name('factura.nuevo');
-
 Route::post('/factura/guardar', 'App\Http\Controllers\FacturaController@guardar')->name('factura.guardar');
+Route::get('/factura/{id}/editar', 'App\Http\Controllers\FacturaController@editar')->name('factura.editar')
+    ->where('id','[0-9]+');
+
 
 
